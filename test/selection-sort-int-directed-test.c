@@ -55,7 +55,7 @@ void test_case_2_five_element()
 //------------------------------------------------------------------------
 // Simple test case that tests sorting 5 equivalent numbers.
 
-void test_case_5_same_element()
+void test_case_3_same_element()
 {
   printf( "\n%s\n", __func__ );
 
