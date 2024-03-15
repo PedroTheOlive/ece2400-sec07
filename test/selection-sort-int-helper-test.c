@@ -25,6 +25,20 @@ void test_case_1_simple()
   ECE2400_CHECK_INT_EQ( find_min( a, 0, 1 ), 0 );
 }
 
+// test_case_2_equivalent
+//------------------------------------------------------------------------
+// Test case for when there are 2 or more equivalent min indices
+
+void test_case_2_equivalent()
+{
+  printf( "\n%s\n", __func__ );
+  int a[] = { 3, 0, 0, 0 };
+  ECE2400_CHECK_INT_EQ( find_min( a, 0, 4 ), 1 );
+  ECE2400_CHECK_INT_EQ( find_min( a, 0, 3 ), 1 );
+  ECE2400_CHECK_INT_EQ( find_min( a, 0, 2 ), 1 );
+  ECE2400_CHECK_INT_EQ( find_min( a, 0, 1 ), 0 );
+}
+
 //------------------------------------------------------------------------
 // main
 //------------------------------------------------------------------------
@@ -35,6 +49,7 @@ int main( int argc, char** argv )
   __n = ( argc == 1 ) ? 0 : atoi( argv[1] );
 
   if ( ( __n <= 0 ) || ( __n == 1 ) ) test_case_1_simple();
+  if ( ( __n <= 0 ) || ( __n == 2 ) ) test_case_2_equivalent();
 
   printf( "\n" );
   return __failed;

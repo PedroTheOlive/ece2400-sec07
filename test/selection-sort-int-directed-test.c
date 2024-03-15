@@ -51,6 +51,34 @@ void test_case_2_five_element()
 }
 
 //------------------------------------------------------------------------
+// test_case_same_element
+//------------------------------------------------------------------------
+// Simple test case that tests sorting 5 equivalent numbers.
+
+void test_case_5_same_element()
+{
+  printf( "\n%s\n", __func__ );
+
+  int a[]     = { 1, 1, 1, 1, 1 };
+  int a_ref[] = { 1, 1, 1, 1, 1 };
+  selection_sort_int( a, 5 );
+  for ( int i = 0; i < 5; i++ )
+    ECE2400_CHECK_INT_EQ( a[i], a_ref[i] );
+
+  int b[]     = { 0, 0, 0, 0, 0 };
+  int b_ref[] = { 0, 0, 0, 0, 0 };
+  selection_sort_int( b, 5 );
+  for ( int i = 0; i < 5; i++ )
+    ECE2400_CHECK_INT_EQ( b[i], b_ref[i] );
+
+  int c[]     = { 100, 100, 100, 100, 100 };
+  int c_ref[] = { 100, 100, 100, 100, 100 };
+  selection_sort_int( c, 5 );
+  for ( int i = 0; i < 5; i++ )
+    ECE2400_CHECK_INT_EQ( c[i], c_ref[i] );
+}
+
+//------------------------------------------------------------------------
 // main
 //------------------------------------------------------------------------
 
@@ -61,6 +89,7 @@ int main( int argc, char** argv )
 
   if ( ( __n <= 0 ) || ( __n == 1 ) ) test_case_1_simple();
   if ( ( __n <= 0 ) || ( __n == 2 ) ) test_case_2_five_element();
+  if ( ( __n <= 0 ) || ( __n == 3 ) ) test_case_3_same_element();
 
   printf( "\n" );
   return __failed;
