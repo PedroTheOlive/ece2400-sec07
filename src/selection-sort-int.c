@@ -23,11 +23,16 @@ int find_min( int* x, int begin, int end )
 {
   assert( begin < end );
 
-  //'''' ASSIGNMENT TASK '''''''''''''''''''''''''''''''''''''''''''''''''
-  // Implement this function
-  //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+  int current = x[begin];
+  int index = 0+begin;
+  for(int i = begin; i<end; i++){
+    if(current > x[i]){
+      current = x[i];
+      index = i;
+    }
+  }
 
-  return 0;
+  return index;
 }
 
 //------------------------------------------------------------------------
@@ -37,10 +42,13 @@ int find_min( int* x, int begin, int end )
 
 void selection_sort_int( int* x, int n )
 {
-  //'''' ASSIGNMENT TASK '''''''''''''''''''''''''''''''''''''''''''''''''
-  // Implement this function
-  //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-  // Go through the whole array and track the minimum index. Then swap
-  // the minum value with the ith spot. Repeat.
+  for(int i = 0; i<n-1; i++){
+    int min_ind = find_min(x, i+1, n);
+    if(x[i] > x[min_ind]){
+      int temp = x[i];
+      x[i] = x[min_ind];
+      x[min_ind] = temp;
+    }
+  }
 }
 
