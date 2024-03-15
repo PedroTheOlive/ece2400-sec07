@@ -21,7 +21,7 @@ import numpy as np
 # execution time for each experiment
 
 n = [  1000,  2000,  4000,  6000,  8000, 10000, 12000 ]
-t = [     0,     0,     0,     0,     0,     0,     0 ]
+t = [ 0.067991, 0.241266, 0.974672, 2.072861, 3.617332, 5.882197, 8.728256 ]
 
 # Use polyfit to find a best fit 0th, 1st, 2nd order polynomial equations
 
