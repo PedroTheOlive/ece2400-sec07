@@ -24,8 +24,8 @@ int find_min( int* x, int begin, int end )
   assert( begin < end );
 
   int current = x[begin];
-  int index = 0+begin;
-  for(int i = begin; i<end; i++){
+  int index = begin;
+  for(int i = begin; i < end; i++){
     if(current > x[i]){
       current = x[i];
       index = i;

@@ -25,5 +25,15 @@ int main()
 
   printf( "minimum index: %d\n", min_idx );
 
+  // Call sort function
+
+  selection_sort_int(a, size);
+
+  //Print out array after sorting
+
+  printf("After Sorting: ");
+
+  ece2400_print_array( a, size);
+
   return 0;
 }
